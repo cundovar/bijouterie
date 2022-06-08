@@ -1,0 +1,22 @@
+ {% extends"base.html.twig" %}
+
+
+ {% block title %}page d'acceuil{% endblock %}
+ {% block h1 %}bienvenu{% endblock %}
+ {% block body %}
+
+ {{ageTwig}}
+
+ {% if ageTwig >=18 %}
+ <h4>tu es majeur</h4>
+ {% else %}
+  <h4>tu es minuer</h4>
+ {% endif %}
+
+ <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet neque incidunt maxime possimus eius, eum corrupti. Unde consequuntur impedit incidunt perspiciatis error ab delectus, quisquam odio dolore ullam quibusdam numquam cumque rerum omnis expedita soluta itaque quod, cupiditate dolores reiciendis doloribus. Facere possimus laboriosam fugit nobis blanditiis illo, culpa velit voluptatibus iusto vero itaque rem eos similique aspernatur voluptates, fugiat accusantium provident beatae saepe totam reprehenderit. Totam, reprehenderit aperiam. Quis corrupti voluptatum optio possimus nihil, alias totam ex magnam? Expedita ducimus voluptatum eveniet a, asperiores nihil hic neque labore nostrum sint non, praesentium facere consectetur ab quaerat voluptatibus perferendis. Cupiditate impedit, voluptatum, rerum doloremque ducimus dolore excepturi cumque modi saepe officiis laboriosam tenetur porro voluptatibus praesentium labore iste veritatis, culpa eos. Distinctio nobis ab vero reiciendis voluptas facere, inventore sapiente deleniti quibusdam fugit quo voluptates exercitationem, dicta sit veritatis delectus ducimus, possimus qui. Incidunt nemo dicta, porro aperiam aliquam necessitatibus possimus id dolore debitis delectus eligendi natus sapiente minima. Molestiae, aut nostrum libero voluptatem cumque, placeat aspernatur debitis hic esse soluta iure quam, possimus laudantium eaque! Deleniti vero laboriosam, tenetur illo ea sapiente voluptates incidunt unde similique voluptate, atque ratione eius, laborum veritatis optio maxime dolore? Minus ducimus consequuntur impedit.</p>
+<div class="text-center">
+<img src="{{asset('images/home.jpg')}}" class="img1"  >
+</div>
+
+ 
+ {% endblock %}

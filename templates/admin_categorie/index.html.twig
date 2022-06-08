@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorie index
+{% endblock %}
+{% block h1 %}
+	gestion des categorie
+{% endblock %}
+
+{% block body %}
+
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom</th>
+				<th>fiche</th>
+				<th>modifier</th>
+				<th>suprimer</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for categorie in categories %}
+				<tr>
+					<td>{{ categorie.id }}</td>
+					<td>{{ categorie.nom }}</td>
+
+					<td>
+						<a href="{{ path('app_admin_categorie_show', {'id': categorie.id}) }}">voir</a>
+					</td>
+
+					<td>
+						<a href="{{ path('app_admin_categorie_edit', {'id': categorie.id}) }}">editer</a>
+					</td>
+
+					<td>
+						<a href="{{ path('app_admin_categorie_delete', {'id': categorie.id}) }}">supprimer</a>
+					</td>
+				</tr>
+			</td>
+
+
+		</tbody>
+	</tr>
+
+</tr>{% else %}
+<tr>
+	<td colspan="3">no records found</td>
+</tr>{% endfor %}</tbody></table><a href="{{ path('app_admin_categorie_new') }}">Crere nouveau</a>{% endblock %}

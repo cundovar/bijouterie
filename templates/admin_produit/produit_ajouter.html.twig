@@ -1,0 +1,87 @@
+ {% extends"base.html.twig" %}
+ {% block title %}ajuter produit{% endblock %}
+{% block h1 %}ajouter produit{% endblock %}
+
+
+
+{% block body %}
+
+<a class="btn btn-dark my-3" href="{{path('produit_afficher')}} ">retour</a>
+
+<div class="col md-6 mx-auto">
+
+{{form_start(formProduit)}} {# balise ouvrante form focile a modifier#}
+
+{# changer affichage formulaire #}
+<div class="row">
+{# sur une meme ligne #}
+<div class="col-md-6">
+
+{{ form_errors(formProduit.prix) }}
+{{ form_label(formProduit.prix) }}
+{{ form_help(formProduit.prix) }}
+{{ form_widget(formProduit.prix) }}
+
+</div>
+
+
+<div class="col-md-6">{{ form_row(formProduit.titre) }}</div>
+{# {{ from-rest(formProduit)}} #}
+
+</div>
+
+
+
+{# form_row = label+errors+help+wigedt #}
+{{ form_row(formProduit.description) }}
+{{ form_row(formProduit.categorie) }}
+{{ form_row(formProduit.marque) }}
+{# {{ form_row(formProduit.categorie) }}/ #}
+{{ form_row(formProduit.matiere) }}
+{{ form_row(formProduit.image) }}
+<div id="zone" class="text-center"></div>
+
+
+
+<input type="submit" value="ajouter" class="btn btn-success col-2 mt-3">
+
+{{form_end(formProduit)}} {# balise fermante form#}
+ 
+
+{# {{form(formProduit)}}
+formulaire brut peut modifiable
+ #}
+
+</div>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $('#produit_matiere').select2({
+            placeholder: 'Sélectionner une matière'
+        });
+
+
+        let zone = $("#zone");
+
+        function loadFile(event)
+        {
+            console.log("test");
+
+            zone.html("");
+           let image = document.createElement("img");
+           image.setAttribute("src", URL.createObjectURL(event.target.files[0]) );
+           image.setAttribute("class", "img300" );
+
+            zone.append(image);
+
+
+        }
+
+
+    </script>
+{% endblock %}

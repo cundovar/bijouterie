@@ -1,0 +1,79 @@
+/* CSS */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background-color:rgb(222, 169, 169) ;
+  
+}
+nav{
+    background-color: gray !important;
+}
+.img1{
+    width: 50vw;
+}
+
+.img80{
+    height: 30px;
+}
+.img300{
+    height: 200px;
+}
+.img400{
+height: 500px;
+}
+.container_voir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* ********catalogue************** */
+.catalogue_container{
+    margin: 0;
+    width: 80%;
+    display: flex;
+    margin-top: 50px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(29, 38, 46, 0.497);
+    border-radius: 30px;
+    box-shadow: 1px 1px 1px;
+}
+
+.produit_catalogue{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    
+}
+.text_sous{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(163, 195, 195);
+    color: rgb(31, 33, 38);
+    border-radius: 50px;
+    align-items: center;
+    margin-top: 10px;
+    box-shadow: 1px 1px 1px;
+    background-image: url(../images/bleu.jpg);
+    text-shadow: 1px 1px 1px;
+
+}
+
+.image{
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px;
+
+}
+
+/* ********fiches produit catalogues */
+
+.container_voir p{
+font-size: 3rem;
+}

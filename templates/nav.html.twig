@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{{path('home') }} ">Bijouterie</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('app_main') }} ">Main</a>
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						administrateur
+					</a>
+
+					<ul class=" dropdown-menu" aria-labelledy="navbarDropdown">
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('produit_afficher') }} ">gestion des produits</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('catalogue') }} ">catalogue</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_admin_categorie_index') }} ">categorie</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_admin_marque_index') }} ">marque</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_admin_matiere_index') }} ">matiere</a>
+						</li>
+
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="">Déconnexion</a>
+						</li>
+
+					</ul>
+				</li>
+
+
+			</ul>
+		</div>
+	</div>
+</nav>
+
+{# 
+la fonction twig path( ) permet de rediriger sur une route ( lien internes)
+2 arguments :
+ 1er ( obligatoire) : le nom de la route
+ 2ele ( facultatif):  #}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Marque index{% endblock %}
+
+{% block body %}
+    <h1>Marque index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>voir</th>
+                <th>editer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for marque in marques %}
+            <tr>
+                <td>{{ marque.id }}</td>
+                <td>{{ marque.nom }}</td>
+                <td>
+                    <a href="{{ path('app_admin_marque_show', {'id': marque.id}) }}">voir</a>
+                </td>
+                <td>
+                    <a href="{{ path('app_admin_marque_edit', {'id': marque.id}) }}">editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_marque_new') }}">Create new</a>
+{% endblock %}

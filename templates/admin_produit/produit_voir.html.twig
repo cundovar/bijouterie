@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+{% block title %}fiche produit
+{% endblock %}
+{% block h1 %}
+	{{produit.titre|capitalize}}
+{% endblock %}
+
+{% block body %}
+	<a href="{{ path('produit_afficher')}}" class=" btn btn-dark my-3">retour</a>
+<div class="container_voir">
+
+
+                    {% if produit.image %}
+                  {# balise img  #}  <img src="{{ asset('images/produit/' ~ produit.image)  }}" alt="" class="img300">
+                    {% else %}
+                     <img src="{{ asset('images/home3.jpg') }}" class="img300">
+                     {% endif %}
+                     <p class="text-center"> {{produit.prix}} €</p>
+                      <p class="text-center">{{produit.dateAt|date("d/m/Y")}}</p>
+
+
+
+                     </div>
+
+
+
+
+
+
+    <h2 class="text-center"></h2>
+    <p class="text-center">{{produit.description}} </p>
+
+{% endblock %}

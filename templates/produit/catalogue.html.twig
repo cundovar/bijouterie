@@ -1,0 +1,55 @@
+{% extends"base.html.twig" %}
+{% block title %}nos produit
+{% endblock %}
+{% block h1 %}nos produit
+{% endblock %}
+
+
+{% block body %}
+	<div class="catalogue_container">
+
+		{% if produits %}
+			{% for produit in produits %}
+            <a href="{{ path('fiche_produit',{'id':produit.id} ) }} ">
+				<div class="produit_catalogue">
+					<div class="image">
+
+
+						{% if produit.image %}
+							{# balise img  #} <img src="{{ asset('images/produit/' ~ produit.image)  }}" alt="" class="img300">
+						{% else %}
+							<img src="{{ asset('images/home2.jpg') }}" class="image">
+						{% endif %}
+
+					</div>
+
+					<div class="text_sous">
+						<span>{{produit.titre|capitalize}}
+						</span>
+
+						{% if produit.description %}
+							{% if produit.description|length > 10 %}
+								{{ produit.description|slice(0,8) }}...
+							{% else %}
+								{{produit_description}}
+							{% endif %}
+
+
+						{% endif %}
+
+						<span>{{produit.prix}}
+							€</span>
+
+					</div>
+				</div>
+                </a>
+			{% endfor %}
+
+		</div>
+
+	{% else %}
+		<h4 class="text-center text-danger fst-italic mt-3">Aucun produit rupture stock</h4>
+
+
+	{% endif %}
+</div>{% endblock %}
